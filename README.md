@@ -1,12 +1,18 @@
-# [Ollama](https://github.com/jmorganca/ollama) demo app for Fly.io
+# Language Assistant
+
+## Notes
+
+* the `MESSAGE` directive impacts only the interactive chat run with `ollama run llama3_la`
+  * `ollama run llama3_la <prompt>` will not take that into account
+  * instead, call the `/api/chat` directly and "translate" the message directives into the `messages` JSON in the API call
+  * the workaround for `ollama run llama3_la <prompt>` is "copy" the `MESSAGE`s into the `SYSTEM`
+
+## Models
+
+* `llama3_la` - simple prompt with English "translation"
+* `llama3_la_adv` - advanced prompt with `MESSAGE` / `request.sh`
 
 
+---
 
-First deploy with:
-```
-fly launch --from https://github.com/fly-apps/ollama-demo
-```
-
-from there update by running: `fly deploy`
-
-Once deployed, interact with the [Rest API](https://github.com/jmorganca/ollama#rest-api) at https://ollama-demo.fly.dev/
+Built with Meta Llama 3
