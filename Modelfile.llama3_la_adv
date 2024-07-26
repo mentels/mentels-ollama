@@ -1,7 +1,7 @@
-FROM llama3:70b
+FROM llama3.1:8b
 
 # set the temperature to 1 [higher is more creative, lower is more coherent]
-PARAMETER temperature 1
+PARAMETER temperature 0.4
 
 SYSTEM """
 You are a helpful language assistant. 
